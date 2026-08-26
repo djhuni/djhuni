@@ -1,0 +1,372 @@
+/* ==========================
+   DJ HuNi Premium Landing
+   style.css
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:#050505;
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
+
+}
+
+/* Tło */
+
+.background{
+
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,#b8860b 0%,transparent 25%),
+    radial-gradient(circle at bottom,#5f4300 0%,transparent 35%),
+    linear-gradient(180deg,#0b0b0b,#000);
+
+    z-index:-3;
+
+}
+
+/* Delikatna poświata */
+
+.overlay{
+
+    position:fixed;
+    inset:0;
+
+    background:
+
+    radial-gradient(circle,#d4af37 0%,transparent 60%);
+
+    opacity:.08;
+
+    animation:glow 8s ease-in-out infinite;
+
+    z-index:-2;
+
+}
+
+@keyframes glow{
+
+0%,100%{
+
+opacity:.05;
+
+transform:scale(1);
+
+}
+
+50%{
+
+opacity:.12;
+
+transform:scale(1.15);
+
+}
+
+}
+
+/* Główny kontener */
+
+.container{
+
+    width:92%;
+    max-width:460px;
+
+    margin:auto;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+}
+
+/* Logo */
+
+.logo{
+
+    width:180px;
+
+    margin-bottom:30px;
+
+    animation:fadeDown 1s ease;
+
+}
+
+/* Nazwisko */
+
+h1{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    margin-bottom:8px;
+
+}
+
+/* Stanowisko */
+
+h2{
+
+    color:#d4af37;
+
+    font-size:19px;
+
+    font-weight:500;
+
+    margin-bottom:30px;
+
+}
+
+/* Opis */
+
+.opis{
+
+    color:#dddddd;
+
+    line-height:1.8;
+
+    margin-bottom:40px;
+
+    font-size:15px;
+
+}
+
+/* Przyciski */
+
+.buttons{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+/* Pojedynczy przycisk */
+
+.btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:14px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(212,175,55,.35);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:18px;
+
+    padding:18px;
+
+    font-size:17px;
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 0 20px rgba(212,175,55,.08);
+
+}
+
+/* Ikony */
+
+.btn i{
+
+    color:#d4af37;
+
+    font-size:22px;
+
+}
+
+/* Hover */
+
+.btn:hover{
+
+    transform:translateY(-5px);
+
+    background:#d4af37;
+
+    color:#000;
+
+    box-shadow:
+
+    0 0 35px rgba(212,175,55,.45);
+
+}
+
+.btn:hover i{
+
+    color:#000;
+
+}
+
+/* Stopka */
+
+footer{
+
+    margin-top:45px;
+
+    color:#777;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+}
+
+/* Animacje */
+
+@keyframes fadeDown{
+
+from{
+
+opacity:0;
+
+transform:translateY(-40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.buttons .btn{
+
+animation:fadeUp .8s ease forwards;
+
+opacity:0;
+
+}
+
+.buttons .btn:nth-child(1){
+
+animation-delay:.2s;
+
+}
+
+.buttons .btn:nth-child(2){
+
+animation-delay:.35s;
+
+}
+
+.buttons .btn:nth-child(3){
+
+animation-delay:.5s;
+
+}
+
+.buttons .btn:nth-child(4){
+
+animation-delay:.65s;
+
+}
+
+.buttons .btn:nth-child(5){
+
+animation-delay:.8s;
+
+}
+
+.buttons .btn:nth-child(6){
+
+animation-delay:.95s;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(35px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* Responsywność */
+
+@media(max-width:420px){
+
+.logo{
+
+width:150px;
+
+}
+
+h1{
+
+font-size:28px;
+
+}
+
+h2{
+
+font-size:17px;
+
+}
+
+.btn{
+
+font-size:16px;
+
+padding:16px;
+
+}
+
+}
