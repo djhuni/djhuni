@@ -1,166 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    color:#fff;
-    min-height:100vh;
-    overflow-x:hidden;
-    position:relative;
-    background:#000;
+font-family:'Poppins',sans-serif;
+background:url("tlo.png") center center/cover no-repeat fixed;
+color:#fff;
+text-align:center;
+position:relative;
+min-height:100vh;
+overflow-x:hidden;
 }
 
-.background{
-    position:fixed;
-    inset:0;
-    background:url("tlo.png") center center/cover no-repeat;
-    filter:brightness(.45) blur(2px);
-    transform:scale(1.05);
-    z-index:-3;
-}
-
-.background::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75));
-}
-
-.background::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-    radial-gradient(circle at 50% 20%,rgba(255,190,0,.45),transparent 35%),
-    radial-gradient(circle at 20% 85%,rgba(255,170,0,.20),transparent 30%),
-    radial-gradient(circle at 80% 80%,rgba(255,200,70,.18),transparent 30%);
-    animation:lights 8s ease-in-out infinite alternate;
-}
-
-@keyframes lights{
-    from{
-        opacity:.6;
-        transform:scale(1);
-    }
-    to{
-        opacity:1;
-        transform:scale(1.08);
-    }
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.58);
+backdrop-filter:blur(4px);
+z-index:-1;
 }
 
 .container{
-    width:90%;
-    max-width:480px;
-    margin:auto;
-    padding:50px 20px;
-    text-align:center;
+width:90%;
+max-width:520px;
+margin:auto;
+padding:40px 0 60px;
 }
 
 .logo{
-    width:260px;
-    max-width:90%;
-    margin-bottom:20px;
-    filter:
-    drop-shadow(0 0 12px rgba(255,215,0,.8))
-    drop-shadow(0 0 35px rgba(255,215,0,.45));
+width:260px;
+max-width:80%;
+margin:10px auto 35px;
+display:block;
+filter:
+drop-shadow(0 0 8px #ffd54d)
+drop-shadow(0 0 18px rgba(255,200,0,.8));
+animation:logoGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow{
+from{
+filter:
+drop-shadow(0 0 6px gold)
+drop-shadow(0 0 12px orange);
+}
+to{
+filter:
+drop-shadow(0 0 18px gold)
+drop-shadow(0 0 30px orange);
+}
 }
 
 h1{
-    font-size:58px;
-    font-weight:800;
-    line-height:1.05;
-    margin-bottom:15px;
-    text-shadow:0 0 25px rgba(0,0,0,.8);
+font-size:64px;
+font-weight:800;
+line-height:1;
+margin-bottom:20px;
+text-shadow:0 0 25px rgba(0,0,0,.6);
 }
 
-h2{
-    font-size:22px;
-    color:#f1c84b;
-    font-weight:600;
-    margin-bottom:35px;
+.subtitle{
+font-size:22px;
+font-weight:600;
+color:#f5c542;
+margin-bottom:45px;
 }
 
-.opis{
-    font-size:23px;
-    line-height:1.8;
-    color:#f5f5f5;
-    margin-bottom:45px;
+.description{
+font-size:18px;
+line-height:1.9;
+margin-bottom:45px;
+color:#f2f2f2;
 }
 
 .button{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:15px;
 
-    width:100%;
-    padding:20px;
+width:100%;
+margin:18px 0;
+padding:20px;
 
-    margin-bottom:20px;
+border-radius:22px;
 
-    text-decoration:none;
-    color:#fff;
+text-decoration:none;
+font-size:24px;
+font-weight:600;
 
-    font-size:23px;
-    font-weight:600;
+color:#fff;
 
-    border-radius:20px;
+background:rgba(25,25,25,.70);
 
-    border:1px solid rgba(255,205,70,.45);
+border:2px solid rgba(255,200,60,.45);
 
-    background:rgba(20,20,20,.55);
+backdrop-filter:blur(10px);
 
-    backdrop-filter:blur(10px);
+transition:.35s;
 
-    transition:.35s;
+box-shadow:
+0 0 15px rgba(255,180,0,.15);
 }
 
 .button i{
-    color:#f3c949;
-    font-size:30px;
+color:#f5c542;
+font-size:34px;
 }
 
 .button:hover{
 
-    transform:translateY(-4px) scale(1.02);
+transform:translateY(-4px) scale(1.02);
 
-    background:rgba(255,193,7,.15);
+background:rgba(45,45,45,.90);
 
-    box-shadow:
-    0 0 20px rgba(255,193,7,.4),
-    0 0 50px rgba(255,193,7,.2);
+box-shadow:
+0 0 20px gold,
+0 0 45px rgba(255,196,0,.55);
+
+border-color:gold;
 }
 
-footer{
-    margin-top:40px;
-    color:#ddd;
-    font-size:18px;
+.footer{
+margin-top:50px;
+font-size:16px;
+opacity:.85;
 }
 
 @media(max-width:600px){
 
 .logo{
-width:220px;
+width:230px;
 }
 
 h1{
 font-size:42px;
 }
 
-h2{
+.subtitle{
 font-size:18px;
 }
 
-.opis{
-font-size:18px;
+.description{
+font-size:16px;
 }
 
 .button{
 font-size:20px;
 padding:18px;
+}
+
+.button i{
+font-size:28px;
 }
 
 }
